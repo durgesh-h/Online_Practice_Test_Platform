@@ -18,7 +18,7 @@ const Signup = () => {
   };
 
   return (
-    <div className="flex items-center flex-col justify-center min-h-screen bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900">
+    <div className="flex px-4 items-center flex-col justify-center min-h-screen bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900">
       <div className="text-center z-40  animate-pendulum">
         <img
           src={img} // Replace with your logo path
@@ -28,33 +28,33 @@ const Signup = () => {
       </div>
     <form
       onSubmit={handleSignup}
-      className="w-full max-w-md bg-white dark:bg-gray-800 shadow-xl rounded-lg p-8 space-y-6 transform transition-all hover:shadow-2xl"
+      className="w-full max-w-md bg-gray-800 shadow-xl rounded-lg p-8 space-y-6 transform transition-all hover:shadow-2xl"
     >
       <div className="text-center">
         
-        <h2 className="text-3xl font-extrabold text-gray-800 dark:text-gray-200">
+        <h2 className="text-3xl font-extrabold text-gray-200">
           Sign Up
         </h2>
-        <p className="text-sm text-gray-500 dark:text-gray-400">
+        <p className="text-sm text-gray-400">
           Join us and start your journey today!
         </p>
       </div>
       <input
         type="text"
         placeholder="Full Name"
-        className="w-full p-3 bg-gray-100 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-md text-gray-800 dark:text-gray-200 focus:ring-2 focus:ring-green-500 focus:outline-none"
+        className="w-full p-3 bg-gray-700 border border-gray-600 rounded-md text-gray-200 focus:ring-2 focus:ring-green-500 focus:outline-none"
         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
       />
       <input
         type="email"
         placeholder="Email Address"
-        className="w-full p-3 bg-gray-100 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-md text-gray-800 dark:text-gray-200 focus:ring-2 focus:ring-green-500 focus:outline-none"
+        className="w-full p-3 bg-gray-700 border border-gray-600 rounded-md text-gray-200 focus:ring-2 focus:ring-green-500 focus:outline-none"
         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
       />
       <input
         type="password"
         placeholder="Password"
-        className="w-full p-3 bg-gray-100 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-md text-gray-800 dark:text-gray-200 focus:ring-2 focus:ring-green-500 focus:outline-none"
+        className="w-full p-3 bg-gray-700 border border-gray-600 rounded-md text-gray-200 focus:ring-2 focus:ring-green-500 focus:outline-none"
         onChange={(e) => setFormData({ ...formData, password: e.target.value })}
       />
       <button
@@ -63,7 +63,7 @@ const Signup = () => {
       >
         Sign Up
       </button>
-      <div className="text-center text-sm text-gray-500 dark:text-gray-400">
+      <div className="text-center text-sm text-gray-400">
         <p>
           Already have an account?{" "}
           <a href="/" className="text-green-500 hover:underline">

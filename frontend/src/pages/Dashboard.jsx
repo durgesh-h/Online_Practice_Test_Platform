@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from '../api';
 import Quiz from '../components/Quiz';
-import Header from '../components/Header';
+
 
 const Dashboard = () => {
   const [quizStarted, setQuizStarted] = useState(false);
@@ -19,9 +19,8 @@ const Dashboard = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white">
-      <Header />
       {!quizStarted ? (
-      <div className="container justify-center mt-40 mx-auto px-4 py-8">
+      <div className="container justify-center pt-40 mx-auto px-4 py-8">
         <h1 className="text-3xl font-bold text-center mb-6">
           Welcome to Your Dashboard
         </h1>

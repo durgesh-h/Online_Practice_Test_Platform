@@ -5,6 +5,8 @@ import GuestRoute from './GuestRoute';
 import Dashboard from './pages/Dashboard';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
+import HeaderG from './components/HeaderG';
+import Header from './components/Header';
 
 function App() {
   return (
@@ -15,6 +17,7 @@ function App() {
             path="/"
             element={
               <GuestRoute>
+                <HeaderG/>
                 <Login />
               </GuestRoute>
             }
@@ -23,6 +26,7 @@ function App() {
             path="/signup"
             element={
               <GuestRoute>
+                 <HeaderG/>
                 <Signup />
               </GuestRoute>
             }
@@ -31,6 +35,7 @@ function App() {
             path="/dashboard"
             element={
               <ProtectedRoute>
+                <Header/>
                 <Dashboard />
               </ProtectedRoute>
             }
