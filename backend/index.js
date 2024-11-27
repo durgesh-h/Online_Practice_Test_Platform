@@ -5,13 +5,14 @@ const connectDB = require('./config/db');
 
 // Initialize the app
 const app = express();
+const CLIENT_ORIGIN = process.env.CLIENT_ORIGIN; // Used for development & production
 
 // Connect to the database
 connectDB();
 
 // Middleware
 app.use(cors({ 
-    origin: ['http://localhost:5173', 'http://your-frontend-domain.com'], // Replace with your frontend domains
+    origin: CLIENT_ORIGIN, // Replace with your frontend domains
     methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allowed methods
     credentials: true // Enable cookies, authorization headers, etc.
 }));
