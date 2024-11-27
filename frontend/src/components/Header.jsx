@@ -12,12 +12,25 @@ const Header = () => {
   };
 
   return (
-    <div className="w-full p-4 bg-gray-500 text-white flex justify-between items-center">
-      <h1 className="text-xl font-bold">Quiz Platform</h1>
-      <button onClick={handleLogout} className="bg-red-500 px-4 py-2 rounded-full">
-        Logout
-      </button>
-    </div>
+    <header className="w-full bg-gray-900 shadow-md text-white py-3 px-6">
+      <div className="container mx-auto flex justify-between items-center">
+        {/* Left: Logo or Brand Name */}
+        <div className="flex items-center space-x-3">
+          <div className="h-10 w-10 bg-gradient-to-r from-purple-600 to-blue-500 rounded-full flex items-center justify-center text-xl font-bold text-white">
+            Q
+          </div>
+          <h1 className="text-2xl font-semibold">Quizify</h1>
+        </div>
+
+        {/* Right: Logout Button */}
+        <button
+          onClick={handleLogout}
+          className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-full shadow-lg transition-all duration-300"
+        >
+          Logout
+        </button>
+      </div>
+    </header>
   );
 };
 
