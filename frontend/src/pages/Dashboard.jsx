@@ -27,13 +27,13 @@ const Dashboard = () => {
       
           <div className="flex flex-col items-center">
             <p className="text-lg text-gray-400 mb-4">
-              Ready to challenge yourself? Start the quiz now!
+              Ready to challenge yourself? Start the test now!
             </p>
             <button
               onClick={startQuiz}
               className="bg-gradient-to-r from-purple-600 to-blue-500 text-white py-2 px-6 rounded-lg hover:from-purple-700 hover:to-blue-600 transition-all duration-300 shadow-lg"
             >
-              Start Quiz
+              Start Test
             </button>
           </div>
           </div>

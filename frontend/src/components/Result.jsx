@@ -31,7 +31,7 @@ const Result = ({ answers }) => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <h1 className="text-3xl font-bold text-center text-white mb-6">Quiz Results</h1>
+      <h1 className="text-3xl font-bold text-center text-white mb-6">Test Results</h1>
 
       {/* Score Section */}
       <div className="text-center text-white mb-6">
@@ -45,7 +45,7 @@ const Result = ({ answers }) => {
             style={{ width: `${scorePercentage}%` }}
           ></div>
         </div>
-        <p className="text-sm mt-1">{scorePercentage.toFixed(0)}% Completed</p>
+        <p className="text-sm mt-1">{scorePercentage.toFixed(0)}% Correct</p>
       </div>
 
       {/* Suggestions */}
@@ -71,7 +71,7 @@ const Result = ({ answers }) => {
           className="bg-indigo-600 text-white px-6 py-2 rounded-lg hover:bg-indigo-500 transition duration-200"
           onClick={() => window.location.reload()} // Reload to restart the quiz
         >
-          Restart Quiz
+          Restart Test
         </button>
       </div>
     </motion.div>
