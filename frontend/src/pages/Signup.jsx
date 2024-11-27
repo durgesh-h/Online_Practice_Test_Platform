@@ -18,7 +18,7 @@ const Signup = () => {
   };
 
   return (
-    <div className="flex items-center flex-col justify-center min-h-screen bg-gradient-to-r from-gray-50 to-gray-200 dark:from-gray-900 dark:to-gray-800">
+    <div className="flex items-center flex-col justify-center min-h-screen bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900">
       <div className="text-center z-40  animate-pendulum">
         <img
           src={img} // Replace with your logo path
