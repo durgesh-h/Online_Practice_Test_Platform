@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import API from '../api';
 
 const Login = () => {
@@ -10,9 +10,17 @@ const Login = () => {
     e.preventDefault();
     try {
       const res = await API.post('/auth/login', formData);
-      localStorage.setItem('token', res.data.token);
-      navigate('/dashboard');
+      console.log('Login Response:', res.data); // Debugging
+      if (res.data.token) {
+        localStorage.setItem('token', res.data.token);
+        navigate('/dashboard');
+        window.location.reload(); // Refresh the page
+        
+      } else {
+        alert('Login failed: No token received.');
+      }
     } catch (error) {
+      console.error('Login Error:', error.response?.data || error.message);
       alert('Invalid credentials. Please try again.');
     }
   };
@@ -33,7 +41,9 @@ const Login = () => {
           className="w-full mb-4 p-2 border rounded"
           onChange={(e) => setFormData({ ...formData, password: e.target.value })}
         />
-        <button className="w-full bg-gray-500 text-white p-2 rounded">Log In</button>
+        <button type="submit" className="w-full bg-gray-500 text-white p-2 rounded">
+          Log In
+        </button>
       </form>
     </div>
   );

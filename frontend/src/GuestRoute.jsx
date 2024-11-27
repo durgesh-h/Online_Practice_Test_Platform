@@ -3,13 +3,13 @@ import { Navigate } from 'react-router-dom';
 import { useAuth } from './AuthContext';
 
 const GuestRoute = ({ children }) => {
-  const { isAuthenticated } = useAuth();
+  const { user } = useAuth();
 
-  if (isAuthenticated) {
-    return <Navigate to="/dashboard" />;
+  if (user) {
+    return <Navigate to="/dashboard" replace />; // Redirect to dashboard if logged in
   }
 
-  return children;
+  return children; // Render children (e.g., Login or Signup) if not authenticated
 };
 
 export default GuestRoute;

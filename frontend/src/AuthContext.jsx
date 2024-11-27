@@ -1,30 +1,36 @@
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import React, { createContext, useState, useContext, useEffect } from 'react';
 
+// Create context
 const AuthContext = createContext();
 
+// AuthProvider to wrap the app and provide context
 export const AuthProvider = ({ children }) => {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [user, setUser] = useState(null);
 
   useEffect(() => {
+    // Check if there's a token in localStorage (or wherever you store it)
     const token = localStorage.getItem('token');
-    setIsAuthenticated(!!token);
+    if (token) {
+      setUser({ token }); // Set user info based on token, or call an API to get user info
+    }
   }, []);
 
   const login = (token) => {
     localStorage.setItem('token', token);
-    setIsAuthenticated(true);
+    setUser({ token });
   };
 
   const logout = () => {
     localStorage.removeItem('token');
-    setIsAuthenticated(false);
+    setUser(null);
   };
 
   return (
-    <AuthContext.Provider value={{ isAuthenticated, login, logout }}>
+    <AuthContext.Provider value={{ user, login, logout }}>
       {children}
     </AuthContext.Provider>
   );
 };
 
+// Hook to access auth context
 export const useAuth = () => useContext(AuthContext);
