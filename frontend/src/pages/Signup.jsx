@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import API from '../api';
-
+import img from '../assets/img.svg';
 const Signup = () => {
   const [formData, setFormData] = useState({ name: '', email: '', password: '' });
   const navigate = useNavigate();
@@ -18,30 +18,62 @@ const Signup = () => {
   };
 
   return (
-    <div className="flex items-center justify-center h-screen bg-gray-100">
-      <form onSubmit={handleSignup} className="p-6 bg-white shadow-md rounded">
-        <h2 className="text-xl font-bold mb-4">Sign Up</h2>
-        <input
-          type="text"
-          placeholder="Name"
-          className="w-full mb-2 p-2 border rounded"
-          onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+    <div className="flex items-center flex-col justify-center min-h-screen bg-gradient-to-r from-gray-50 to-gray-200 dark:from-gray-900 dark:to-gray-800">
+      <div className="text-center z-40  animate-pendulum">
+        <img
+          src={img} // Replace with your logo path
+          alt="Logo"
+          className="h-16 mx-auto mb-[-1vh] "
         />
-        <input
-          type="email"
-          placeholder="Email"
-          className="w-full mb-2 p-2 border rounded"
-          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          className="w-full mb-4 p-2 border rounded"
-          onChange={(e) => setFormData({ ...formData, password: e.target.value })}
-        />
-        <button className="w-full bg-gray-500 text-white p-2 rounded">Sign Up</button>
-      </form>
-    </div>
+      </div>
+    <form
+      onSubmit={handleSignup}
+      className="w-full max-w-md bg-white dark:bg-gray-800 shadow-xl rounded-lg p-8 space-y-6 transform transition-all hover:shadow-2xl"
+    >
+      <div className="text-center">
+        
+        <h2 className="text-3xl font-extrabold text-gray-800 dark:text-gray-200">
+          Sign Up
+        </h2>
+        <p className="text-sm text-gray-500 dark:text-gray-400">
+          Join us and start your journey today!
+        </p>
+      </div>
+      <input
+        type="text"
+        placeholder="Full Name"
+        className="w-full p-3 bg-gray-100 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-md text-gray-800 dark:text-gray-200 focus:ring-2 focus:ring-green-500 focus:outline-none"
+        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+      />
+      <input
+        type="email"
+        placeholder="Email Address"
+        className="w-full p-3 bg-gray-100 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-md text-gray-800 dark:text-gray-200 focus:ring-2 focus:ring-green-500 focus:outline-none"
+        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+      />
+      <input
+        type="password"
+        placeholder="Password"
+        className="w-full p-3 bg-gray-100 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-md text-gray-800 dark:text-gray-200 focus:ring-2 focus:ring-green-500 focus:outline-none"
+        onChange={(e) => setFormData({ ...formData, password: e.target.value })}
+      />
+      <button
+        type="submit"
+        className="w-full py-3 bg-gradient-to-r from-green-600 to-teal-600 text-white font-bold rounded-md shadow-md hover:from-green-700 hover:to-teal-700 transition-all duration-300"
+      >
+        Sign Up
+      </button>
+      <div className="text-center text-sm text-gray-500 dark:text-gray-400">
+        <p>
+          Already have an account?{" "}
+          <a href="/" className="text-green-500 hover:underline">
+            Log In
+          </a>
+        </p>
+      </div>
+    </form>
+  </div>
+  
   );
 };
 
